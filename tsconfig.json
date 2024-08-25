@@ -5,14 +5,19 @@
 	"compilerOptions": {
 		"lib": ["es2023"],
 		"outDir": "dist",
-		"module": "node16",
+		"module": "preserve",
 		"target": "es2022",
 		"strict": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
-		"moduleResolution": "node16",
+		"moduleResolution": "Bundler",
 		"noUncheckedIndexedAccess": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./*"]
+		}
 	},
-	"include": ["src"]
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules"]
 }

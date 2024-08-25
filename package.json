@@ -1,23 +1,40 @@
 {
 	"name": "practice-cli",
+	"version": "0.0.0",
+	"description": "",
+	"license": "MIT",
+	"author": "Tim DeHof",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/timothydehof/practice-cli.git"
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [],
+	"type": "module",
+	"exports": "./dist/index.js",
 	"bin": {
 		"practice": "./dist/index.js"
 	},
-	"version": "0.0.0",
-	"main": "index.js",
 	"scripts": {
 		"link-cli": "yarn --global unlink practice-cli && yarn --global link",
-		"dev": "tsc -w"
+		"dev": "tsup --watch",
+		"build": "tsup",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node dist/index.js -watch"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
 	"devDependencies": {
 		"@types/node": "^22.4.1",
+		"@types/prompts": "^2.4.9",
+		"tsup": "^8.2.4",
 		"typescript": "^5.5.4"
 	},
 	"dependencies": {
-		"commander": "^12.1.0"
+		"chalk": "^5.3.0",
+		"commander": "^12.1.0",
+		"logger": "^0.0.1",
+		"prompts": "^2.4.2",
+		"zod": "^3.23.8"
 	}
 }
